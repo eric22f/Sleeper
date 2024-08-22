@@ -104,7 +104,7 @@ public static class GetKeepers
             }
 
             var results = new StringBuilder();
-            foreach (var keeper in keeperResults.OrderBy(k => k.Owner))
+            foreach (var keeper in keeperResults.OrderBy(k => k.Owner).ThenBy(k => k.Player))
             {
                 results.AppendLine($"{keeper.Owner} ({keeper.TeamName}): {keeper.Player} ({keeper.Position} - {keeper.Team})");
             }
